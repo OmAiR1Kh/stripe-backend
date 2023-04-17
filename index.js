@@ -7,6 +7,7 @@ const app = express();
 const cors = require("cors");
 app.use(express.static("public"));
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 
 app.post("/create-checkout-session", async (req, res) => {
   let status, error;
